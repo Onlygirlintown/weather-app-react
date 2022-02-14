@@ -1,0 +1,44 @@
+:root {
+  --branding-color: #fff1af;
+  --primary-color: #66806a;
+  --secondary-color: #b4c6a6;
+  --third-color: #ffc286;
+}
+.container {
+  border: solid;
+  border-color: var(--branding-color);
+  border-radius: 30px;
+  background-color: var(--branding-color);
+  color: var(--primary-color);
+  padding-bottom: 30px;
+}
+div {
+  text-align: center;
+}
+.container ul {
+  padding: 0;
+}
+.container li {
+  list-style: none;
+}
+form {
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+.CurrentDayInfo {
+  border-right: solid;
+  border-right-color: #ffc286;
+  border-right-style: dashed;
+}
+.CurrentDayStats {
+  color: var(--secondary-color);
+}
+.formInput {
+  background-color: #fff1af;
+  border: none;
+}
+.btn-primary {
+  background-color: #66806a;
+  padding: 5px;
+  border-color: #66806a;
+}
