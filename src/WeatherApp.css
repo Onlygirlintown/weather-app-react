@@ -43,3 +43,26 @@ form {
   padding: 5px;
   border-color: #66806a;
 }
+.temperatureDegree {
+  font-size: 45px;
+  position: relative;
+  bottom: -11px;
+}
+.degreeSymbol {
+  font-size: 20px;
+  position: relative;
+  top: -7px;
+}
+.units {
+  color: var(--primary-color);
+  font-size: 15px;
+  color: var(--secondary-color);
+  position: relative;
+  top: -10px;
+  right: -3px;
+  text-decoration: none;
+}
+.celsiusDegree {
+  text-decoration: none;
+  color: var(--secondary-color);
+}

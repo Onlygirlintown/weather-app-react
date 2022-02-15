@@ -42,14 +42,23 @@ export default function WeatherApp() {
           onChange={updateCity}
         />
         <button type="submit" className="btn btn-primary">
-          Search
+          Search!
         </button>
       </form>
       <div className="row">
         <div className="col-6 CurrentDayInfo">
-          <h1>Monday</h1>
+          <h1 className="text-capitalize">{city}</h1>
           <img src={icon} />
-          <span>{temperature}F/C</span>
+          <span className="temperatureDegree">{temperature}</span>
+          <span className="degreeSymbol">°</span>
+          <span>
+            <a href="#" className="units">
+              F/
+              <a href="#" className="celsiusDegree">
+                C
+              </a>
+            </a>
+          </span>
           <ul className="CurrentDayStats">
             <li>12:00pm</li>
             <li className="text-capitalize">{description}</li>
