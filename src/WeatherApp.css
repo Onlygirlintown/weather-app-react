@@ -42,6 +42,7 @@ form {
   background-color: #66806a;
   padding: 5px;
   border-color: #66806a;
+  border-radius: 50%;
 }
 .temperatureDegree {
   font-size: 45px;
@@ -63,6 +64,11 @@ form {
   text-decoration: none;
 }
 .celsiusDegree {
-  text-decoration: none;
   color: var(--secondary-color);
+  text-decoration: none;
+}
+
+.btn-primary:hover {
+  background-color: var(--third-color);
+  border-color: var(--third-color);
 }
