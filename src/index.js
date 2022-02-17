@@ -5,7 +5,7 @@ import WeatherApp from "./WeatherApp";
 
 ReactDOM.render(
   <React.StrictMode>
-    <WeatherApp />
+    <WeatherApp defaultCity="San Diego" />
   </React.StrictMode>,
   document.getElementById("root")
 );

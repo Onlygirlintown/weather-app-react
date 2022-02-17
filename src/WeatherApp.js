@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import axios from "axios";
+import ReadableDate from "./ReadableDate";
 import "bootstrap/dist/css/bootstrap.css";
 import "./WeatherApp.css";
 
-export default function WeatherApp() {
-  const [ready, setReady] = useState(false);
-  const [weatherData, setWeatherData] = useState({});
+export default function WeatherApp(props) {
+  const [weatherData, setWeatherData] = useState({ ready: false });
 
   function displayWeather(response) {
     console.log(response.data);
@@ -17,12 +17,12 @@ export default function WeatherApp() {
       humidity: Math.round(response.data.main.humidity),
       description: response.data.weather[0].description,
       city: response.data.name,
-      date: "Monday 12:00pm",
+      date: new Date(response.data.dt * 1000),
       iconUrl: "https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png",
     });
   }
 
-  if (ready) {
+  if (weatherData.ready) {
     return (
       <div className="container">
         <form>
@@ -48,7 +48,9 @@ export default function WeatherApp() {
               </a>
             </span>
             <ul className="CurrentDayStats">
-              <li>{weatherData.date}</li>
+              <li>
+                <ReadableDate date={weatherData.date} />
+              </li>
               <li className="text-capitalize">{weatherData.description}</li>
               <li>Wind: {weatherData.wind} mph</li>
               <li>Humidty: {weatherData.humidity} %</li>
@@ -58,9 +60,8 @@ export default function WeatherApp() {
       </div>
     );
   } else {
-    let city = "Miami";
     let apiKey = "ff603b4615415a7ed5f7b26e07b59db6";
-    let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
+    let url = `https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=imperial`;
     axios.get(url).then(displayWeather);
 
     return "Loading!";
