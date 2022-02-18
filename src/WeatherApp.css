@@ -26,7 +26,7 @@ form {
   margin-top: 20px;
   margin-bottom: 30px;
 }
-.CurrentDayInfo {
+.Current-Day-Info {
   border-right: solid;
   border-right-color: #ffc286;
   border-right-style: dashed;
@@ -42,7 +42,6 @@ form {
   background-color: #66806a;
   padding: 5px;
   border-color: #66806a;
-  border-radius: 50%;
 }
 .temperatureDegree {
   font-size: 45px;
@@ -64,11 +63,6 @@ form {
   text-decoration: none;
 }
 .celsiusDegree {
-  color: var(--secondary-color);
   text-decoration: none;
-}
-
-.btn-primary:hover {
-  background-color: var(--third-color);
-  border-color: var(--third-color);
+  color: var(--secondary-color);
 }
